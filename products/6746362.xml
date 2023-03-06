@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE product>
+<product>
+   <id>
+     6746362
+   </id>
+    <name>
+      Футболка XXL Виноград
+    </name>
+   <size>
+     XXL
+   </size>
+   <price>
+     134.67
+   </price>
+   <weight>
+     300
+   </weight>
+   <pics>
+     <pic>
+       /static/pics/8.png
+     </pic>
+     <pic>
+       /static/pics/8.2.png
+     </pic>
+   </pics>
+</product>
