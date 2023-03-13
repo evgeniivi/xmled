@@ -4,23 +4,34 @@ import { AjaxService } from './ajaxService.js';
 let ProductsService = {
 	picSize: 180,
 	categories: [],
-	products:[],
-	productsAll:[],
+	config: {},
+	products: [],
+	productsAll: [],
 	filters: [],
 	getByApiAll: function(cb){
 		let products = [];
+		let self = this;
 
-    AjaxService.doAjax("/catalog/out/", function(data){
-			let productsAll = data;
+    AjaxService.doAjaxPost("/catalog/out/", {}, function(data){
+			let productsAll = data.products;
+			self.config = data.config;
 
 			for (var i of productsAll) {
 				let product = i;
 				product.badge = "";
 
-				if (product.product)
-						product.id = product.product.id.$;
+				if (product){
+						product.id = product[self.config["id"]];
+						product.name = product[self.config["name"]];
+						product.price = product[self.config["price"]];
+						product.pic = [];
 
-				products.push(i);
+						for (let i=1; i <= product[self.config["pics"]]*1; i++){
+							  let istr = product.id + (i != 1 ? "."+i :"") + ".png";
+    						product.pic.push("/static/pics/" + istr);
+						}
+				}
+				products.push(product);
 			}
 			cb(products)
 		})

@@ -1,6 +1,6 @@
 {
   "name": "xmled",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Basic xml-based foundation for e-shop. Bottle python an Vue.js frontend",
   "main": "index.js",
   "scripts": {

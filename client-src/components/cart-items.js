@@ -10,8 +10,8 @@ let Main = Vue.component('cart-items', {
           '<div v-on:click="click()" class="cart-items__message">У вас в корзине товаров: {{products.length}} !!!</div>'+
           '<div class="container">'+
             '<div v-for="item in products" class="product">'+
-                '<div class="product__name">{{item.product.name.$}}</div>'+
-                '<div class="product__price">{{item.product.price.$}}</div>'+
+                '<div class="product__name">{{item.name}}</div>'+
+                '<div class="product__price">{{item.price}}</div>'+
                 '<div v-bind:class="{hide: !canModifyItems}" class="remove-cross" v-on:click="removeItem(item)">&times;</div>'+
             '</div>'+
           '</div>'+

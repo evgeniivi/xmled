@@ -1,27 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE product>
+<?xml version="1.0" ?>
 <product>
-  <id>
-    6875578
-  </id>
-   <name>
-     Футболка XXL Брокколи
-   </name>
-   <size>
-     XXL
-   </size>
-   <price>
-     155.84
-   </price>
-   <weight>
-     300
-   </weight>
-   <pics>
-     <pic>
-       /static/pics/3.png
-     </pic>
-     <pic>
-       /static/pics/3.2.png
-     </pic>
-   </pics>
+   <id>6875578</id>
+   <name>Футболка XXL Брокколи</name>
+   <size>XXL</size>
+   <price>155.84</price>
+   <weight>300</weight>
+   <pics>2</pics>
 </product>

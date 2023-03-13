@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE catalog>
 <catalog>
-   <main-pic>
-     1
-   </main-pic>
+   <main-pic>1</main-pic>
+   <field client-path="id">id</field>
+   <field client-path="name">name</field>
+   <field client-path="price">price</field>
+   <field client-path="weight">weight</field>
+   <field client-path="size">size</field>
+   <field client-path="pics">pics</field>
 </catalog>

@@ -8,9 +8,9 @@ import { ProductsService } from '../services/productsService.js';
 let Main = Vue.component('catalog', {
   	template: '<div>'+
     '<div class="products-list"><div v-for="(item, index) in products" class="product-card" v-on:click="showProduct(item)">'+
-      '<img  :src="item.product.pics.pic[1].$" />'+
-      '<div class="product-card__name">{{item.product.name.$}}</div>'+
-      '<div class="product-card__price">{{item.product.price.$}}</div>'+
+      '<img  :src="item.pic[1]" />'+
+      '<div class="product-card__name">{{item.name}}</div>'+
+      '<div class="product-card__price">{{item.price}}</div>'+
       '<div class="product-card__cover""></div>'+
       '<div class="product-card__badge" v-bind:class="{ hide: item.badge.length == 0}">{{item.badge}}</div>'+
       '<div class="product-card__buy" v-bind:class="{ hide: (item.badge.length > 0) || orderCreated}" v-on:click="addProduct($event, item)">купить</div>'+

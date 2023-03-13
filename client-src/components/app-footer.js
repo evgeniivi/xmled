@@ -13,7 +13,7 @@ let Main = Vue.component('app-footer', {
             '<div class="menu-item"><a href="/blog">Блог</a></div>'+
             '<div class="menu-item"><a href="/news">Новости</a></div>'+
           '</div>'+
-          '<div class="copyright">© Копирайт: <a href="https://github.com/evgeniivi">evgeniivi</a></div>'+
+          '<div class="copyright">-xmled- © Копирайт: <a href="https://github.com/evgeniivi">evgeniivi</a></div>'+
       '</div>',
     data: function () {
         return {

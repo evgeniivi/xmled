@@ -2,4 +2,5 @@ node_modules/*
 __pycache__/*
 xmled/__pycache__/*
 package-lock.json
+imports/*
 *~
