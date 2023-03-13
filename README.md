@@ -8,7 +8,7 @@ Xml based bottle python shop
 folder structure:  
   
 +-xmled  
----config      - folder for settings
+---config      - folder for settings  
 ---imports     - folder to load import  
 ---orders      - folder with orders  
 ---products    - folder to store xmls of products  
