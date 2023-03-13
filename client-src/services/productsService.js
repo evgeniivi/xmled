@@ -23,7 +23,7 @@ let ProductsService = {
 				if (product){
 						product.id = product[self.config["id"]];
 						product.name = product[self.config["name"]];
-						product.price = product[self.config["price"]];
+						product.price = product[self.config["price"]]*1;
 						product.pic = [];
 
 						for (let i=1; i <= product[self.config["pics"]]*1; i++){
@@ -79,8 +79,8 @@ let ProductsService = {
 	},*/
 	getTotalPrice: function() {
 		let sum = 0;
-		for(let i of this.products){
-			sum += i.product.price.$;
+		for(let i of this.products) {
+			sum += i.price;
 		}
 		return parseFloat(sum).toFixed(2);
 	},
