@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE products>
+<products>
+  <product>
+     <id>
+       2432341
+     </id>
+      <name>
+        Футболка XXL Тыква
+      </name>
+     <size>
+       XXL
+     </size>
+     <priced>
+       623.30
+     </priced>
+     <weight>
+       300
+     </weight>
+     <pics>
+       2
+     </pics>
+  </product>
+</products>
