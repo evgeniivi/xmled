@@ -30,6 +30,14 @@ body {
 	font-size: 17px;
 }
 
+.email {
+	display: inline-block;
+	position: absolute;
+	right: 130px;
+	top: 15px;
+	height: 20px;
+	font-size: 14px;
+}
 
 .title-327 {
 	padding: 2px;
@@ -313,6 +321,23 @@ body {
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 40px;
+}
+
+.cart-total__email {
+	width: 200px;
+	margin-top: 20px;
+	margin-left: 160px;
+
+}
+
+.cart-total__email-ok {
+	 background-color: grey;
+	 padding: 4px;
+	 border-radius: 4px;
+	 color: white;
+	 border: none;
+	 margin-left: 10px;
+	 cursor: pointer;
 }
 
 .cart-total div {

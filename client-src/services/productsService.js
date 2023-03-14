@@ -110,15 +110,17 @@ let ProductsService = {
 		this.products.push(item);
 		return this.products;
 	},
-	makeOrder: function(ids, cb) {
+	makeOrder: function(opts, cb) {
 		let idsstr = "";
 		let i = 0;
-
-		for (let id of ids) {
+		for (let id of opts["ids"]) {
 			idsstr = idsstr + ((i != 0) ? "-": "") + id;
 			i++;
 		}
-		AjaxService.doAjax("/catalog/order/"+ idsstr, function(data){
+		let fdata = new FormData();
+		fdata.append("ids", idsstr);
+		fdata.append("userid", opts["userId"]);
+		AjaxService.doAjaxPost("/catalog/order/", fdata, function(data){
 			cb(data)
 		})
 	},

@@ -8,11 +8,13 @@ let Main = Vue.component('app-header', {
         '<div class="menu">'+
           '<div class="menu-item">Е-<span class="title-327" :style="{backgroundColor: logoColor}">МАГ</span></div>'+
         '</div>'+
+        '<div class="email" v-bind:class="{ hide: !shownEmail }">{{ email }}</div>'+
         '<div class="cart"><div class="cart__title" @click="showCart()" :style="{backgroundColor: cartBColor, color: cartColor}">Корзина</div></div>'+
       '</div>',
     data: function () {
         return {
           shownCart: false,
+          shownEmail: false,
           shownFilter: false,
           shownCategories: false,
           filtered: 0,
@@ -21,7 +23,8 @@ let Main = Vue.component('app-header', {
           cartBColor: "",
           cartColor: "",
           catBColor: "",
-          catColor: ""
+          catColor: "",
+          email: "guest@xmled.com"
         }
     },
   	created: function() {
@@ -56,6 +59,11 @@ let Main = Vue.component('app-header', {
           this.$root.$emit("hideCategories");
       });
 
+      this.$root.$on("showEmail",  function(data){
+          self.shownEmail = true;
+          self.email = data.email;
+      });
+
       this.$root.$on("hideCategories",  function(){
           self.shownCategories = false;
       });
@@ -66,7 +74,6 @@ let Main = Vue.component('app-header', {
           self.$root.$emit("hideCart");
           self.$root.$emit("hideFilter");
       });
-
 
       this.$root.$on("catalogRefresh",  function(data){
           if (data) {

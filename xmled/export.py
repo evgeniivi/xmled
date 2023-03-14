@@ -1,36 +1,29 @@
-import json, xmljson
+import json
 import os
 
-import xml.etree.ElementTree as ET
-from lxml.etree import fromstring, tostring
-from xml.etree.ElementTree import Element,tostring
-
-from xml.dom import minidom
-
-import xmled.imps
+import xmled.base
+import xmled.xml
 
 def all():
     jsonstr = '{ "products": ['
     count = 0
-    for file in os.listdir("./products/"):
-        tree = ET.parse("./products/" + file)
-        root = tree.getroot()
-        l = xmled.product.xml_to_dict(root, "product")
+    for file in os.listdir(xmled.base.productspath):
+        xmlfile = xmled.xml.xmlfile(xmled.base.productspath + file)
+        l = xmled.xml.xml_to_dict(xmlfile, "product")
         if (count != 0):
             jsonstr += ","
         jsonstr += json.dumps(l)
         count += 1
 
-    config = xmled.imps.browseconfig(True)
+    config = xmled.xml.browseconfig(True)
     jsonstr += '], "config": ' + json.dumps(config) + '}'
     return jsonstr
 
-def xml():
-    xmlstr = '<pre ><products>'
-    for file in os.listdir("./products/"):
-        tree = ET.parse("./products/" + file)
-        root = tree.getroot()
-        dump = str(ET.tostring(root))
-        xmlstr += dump
-    xmlstr += '</products></pre>'
-    return xmlstr
+# def xml():
+#     xmlstr = '<pre ><products>'
+#     for file in os.listdir(xmled.base.productspath):
+#         xmlfile = xmled.xml.xmlfile(xmled.base.productspath + file)
+#         # dump = str(ET.tostring(root))
+#         xmlstr += dump
+#     xmlstr += '</products></pre>'
+#     return xmlstr
